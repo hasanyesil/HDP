@@ -12,5 +12,7 @@ namespace Dernek.Business.Abstract
         decimal GetOrganizationFee();
 
         Organization GetOrganization();
+
+        Organization UpdateOrganization(Organization organization);
     }
 }

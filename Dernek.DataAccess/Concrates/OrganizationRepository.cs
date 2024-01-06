@@ -79,7 +79,17 @@ namespace Dernek.DataAccess.Concrates
 
         public Organization Update(Organization obj)
         {
-            throw new NotImplementedException();
+            string sql = @"update Organization set OrganizationName = ?, Description = ?, Price = ?, PricePeriod = ?";
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("OrganizationName", obj.OrganizationName);
+            dict.Add("Description", obj.Description);
+            dict.Add("Price", obj.Price);
+            dict.Add("PricePeriod", Convert.ToByte(obj.PricePeriod));
+
+            DBHelper.ExecuteNonQuery(sql, dict);
+
+            return obj;
         }
     }
 }

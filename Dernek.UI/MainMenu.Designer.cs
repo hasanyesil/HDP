@@ -55,8 +55,8 @@
             this.btnOrganization = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDescription = new System.Windows.Forms.TextBox();
+            this.tbOrganizationName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -285,13 +285,14 @@
             this.btnOrganization.TabIndex = 7;
             this.btnOrganization.Text = "Update Organization";
             this.btnOrganization.UseVisualStyleBackColor = true;
+            this.btnOrganization.Click += new System.EventHandler(this.btnOrganization_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tbOrganizationName);
+            this.panel1.Controls.Add(this.tbDescription);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnOrganization);
@@ -312,20 +313,20 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Description :";
             // 
-            // textBox1
+            // tbDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 267);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(362, 155);
-            this.textBox1.TabIndex = 9;
+            this.tbDescription.Location = new System.Drawing.Point(215, 267);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(362, 155);
+            this.tbDescription.TabIndex = 9;
             // 
-            // textBox2
+            // tbOrganizationName
             // 
-            this.textBox2.Location = new System.Drawing.Point(215, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(362, 30);
-            this.textBox2.TabIndex = 10;
+            this.tbOrganizationName.Location = new System.Drawing.Point(215, 47);
+            this.tbOrganizationName.Name = "tbOrganizationName";
+            this.tbOrganizationName.Size = new System.Drawing.Size(362, 30);
+            this.tbOrganizationName.TabIndex = 10;
             // 
             // label7
             // 
@@ -384,8 +385,8 @@
         private System.Windows.Forms.ComboBox cbPricePeriods;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbOrganizationName;
+        private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnOrganization;
     }

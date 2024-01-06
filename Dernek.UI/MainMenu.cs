@@ -67,6 +67,8 @@ namespace Dernek.UI
             Organization organization = organizationService.GetOrganization();
             nbFee.Value = organization.Price;
             cbPricePeriods.SelectedItem = organization.PricePeriod;
+            tbDescription.Text = organization.Description;
+            tbOrganizationName.Text = organization.OrganizationName;
         }
 
         #region Events
@@ -145,6 +147,23 @@ namespace Dernek.UI
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOrganization_Click(object sender, EventArgs e)
+        {
+            Organization organization = new Organization
+            {
+                Id = 1,
+                OrganizationName = tbOrganizationName.Text,
+                Description = tbDescription.Text,
+                Price = nbFee.Value,
+                PricePeriod = (PricePeriods)cbPricePeriods.SelectedValue
+            };
+
+            organizationService.UpdateOrganization(organization);
+
+            MessageBox.Show("Updated");
+            getOrganizationInfo();
         }
     }
 }
