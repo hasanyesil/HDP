@@ -29,7 +29,9 @@ namespace Dernek.DataAccess.Concrates
 
         public DataTable GetAllAsDt()
         {
-            throw new NotImplementedException();
+            string sql = @"select * from Member";
+
+            return DBHelper.ExecuteReader(sql, null);
         }
 
         public List<Member> GetByFilter(Member member)

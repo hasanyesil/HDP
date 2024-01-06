@@ -2,6 +2,7 @@
 using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,11 @@ namespace Dernek.DataAccess.Concrates
         }
 
         public List<Payment> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable GetAllAsDt()
         {
             throw new NotImplementedException();
         }

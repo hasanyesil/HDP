@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,12 @@ namespace Dernek.DataAccess.Helper
                     dbCmd.CommandType = CommandType.Text;
                     dbCmd.CommandText = sql;
                     
-                    foreach(var param in parameters)
+                    if(parameters != null)
                     {
-                        dbCmd.Parameters.AddWithValue(param.Key, param.Value);
+                        foreach (var param in parameters)
+                        {
+                            dbCmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
                     }
 
                     return dbCmd.ExecuteNonQuery();
@@ -41,7 +45,7 @@ namespace Dernek.DataAccess.Helper
             }
         }
 
-        public static int ExecuteNonQuery(string sql)
+        public static DataTable ExecuteReader(string sql, Dictionary<string, object> parameters)
         {
             using (var dbConn = getConnection())
             {
@@ -51,7 +55,18 @@ namespace Dernek.DataAccess.Helper
                     dbCmd.CommandType = CommandType.Text;
                     dbCmd.CommandText = sql;
 
-                    return dbCmd.ExecuteNonQuery();
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            dbCmd.Parameters.AddWithValue(param.Key, param.Value);
+                        }
+                    }
+
+                    DataTable dt = new DataTable();
+                    dt.Load(dbCmd.ExecuteReader());
+
+                    return dt;
                 }
             }
         }

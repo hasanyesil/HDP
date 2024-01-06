@@ -1,4 +1,6 @@
-﻿using Dernek.DataAccess.Concrates;
+﻿using Dernek.Business;
+using Dernek.DataAccess.Concrates;
+using Dernek.Entity.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +35,55 @@ namespace Dernek.UI
                 MemberName = "hasan",
                 PhoneNumber = "1234567890"
             });
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MemberService memberService = new MemberService();
+            DataTable dt = memberService.GetAllMembersAsDataTable();
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "BloodType")
+            {
+                if(e.Value != null)
+                {
+                    BloodTypes t = (BloodTypes)e.Value;
+                    string enumStr = Enum.GetName(typeof(BloodTypes), t);
+                    e.Value = enumStr;
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "City")
+            {
+                if(e.Value != null)
+                {
+                    Cities c = (Cities)Convert.ToInt32(e.Value);
+                    string cityStr = Enum.GetName(typeof(Cities), c);
+                    e.Value = cityStr;
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "IsActive")
+            {
+                if(e.Value != null)
+                {
+                    if(Convert.ToInt32(e.Value) == 1)
+                    {
+                        e.Value = "Active";
+                    }
+                    else
+                    {
+                        e.Value = "Inactive";
+                    }
+                }
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
