@@ -19,7 +19,7 @@ namespace Dernek.Entity.Models
 
         public Cities City { get; set; }
 
-        public bool IsActive { get; set; }
+        public MemberStatuses MemberStatus { get; set; }
 
         public string PhoneNumber { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using Dernek.Business;
 using Dernek.DataAccess.Concrates;
 using Dernek.Entity.Enums;
+using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,27 +23,18 @@ namespace Dernek.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MemberRepository memberRepository = new MemberRepository();
-            Random rnd = new Random();
-            memberRepository.Insert(new Entity.Models.Member
-            {
-                Id = rnd.Next(Int32.MaxValue).ToString(),
-                BloodType = Entity.Enums.BloodTypes.AN,
-                City = Entity.Enums.Cities.Ankara,
-                IsActive = true,
-                MemberSurname = "test",
-                BirthDate = DateTime.Today,
-                MemberName = "hasan",
-                PhoneNumber = "1234567890"
-            });
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            form2.TopLevel = true;
+            getMembers();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MemberService memberService = new MemberService();
-            DataTable dt = memberService.GetAllMembersAsDataTable();
-            dataGridView1.DataSource = dt;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cbBloodType.DataSource = Enum.GetValues(typeof(BloodTypes));
+            cbStatus.DataSource = Enum.GetValues(typeof(MemberStatuses));
+            cbCity.DataSource = Enum.GetValues(typeof(Cities));
+            getMembers();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -65,18 +57,13 @@ namespace Dernek.UI
                     e.Value = cityStr;
                 }
             }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name == "IsActive")
+            else if (dataGridView1.Columns[e.ColumnIndex].Name == "MemberStatus")
             {
                 if(e.Value != null)
                 {
-                    if(Convert.ToInt32(e.Value) == 1)
-                    {
-                        e.Value = "Active";
-                    }
-                    else
-                    {
-                        e.Value = "Inactive";
-                    }
+                    MemberStatuses m = (MemberStatuses)Convert.ToInt32(e.Value);
+                    string statusStr = Enum.GetName(typeof(MemberStatuses), m);
+                    e.Value = statusStr;
                 }
             }
         }
@@ -84,6 +71,24 @@ namespace Dernek.UI
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void getMembers()
+        {
+            MemberService memberService = new MemberService();
+            DataTable dt = memberService.GetAllMembersAsDataTable();
+            dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("MemberStatus = '{0}'", Convert.ToByte(cbStatus.SelectedValue));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = "";
         }
     }
 }

@@ -19,6 +19,11 @@ namespace Dernek.Business
             memberRepository = new MemberRepository();
         }
 
+        public Member AddMember(Member member)
+        {
+            return memberRepository.Insert(member);
+        }
+
         public List<Member> GetAllMembers()
         {
             return memberRepository.GetAll();

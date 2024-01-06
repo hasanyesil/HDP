@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Enums\BloodTypes.cs" />
     <Compile Include="Enums\Cities.cs" />
+    <Compile Include="Enums\MemberStatuses.cs" />
     <Compile Include="Enums\PricePeriods.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Member.cs" />

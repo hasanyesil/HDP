@@ -41,7 +41,7 @@ namespace Dernek.DataAccess.Concrates
 
         public Member Insert(Member obj)
         {
-            string sql = @"insert into Member (Id, MemberName, MemberSurname, BloodType, BirthDate, City, IsActive, PhoneNumber)
+            string sql = @"insert into Member (Id, MemberName, MemberSurname, BloodType, BirthDate, City, MemberStatus, PhoneNumber)
                             values (?,?,?,?,?,?,?,?)";
 
             Dictionary<string, object> dict = new Dictionary<string, object>();
@@ -51,7 +51,7 @@ namespace Dernek.DataAccess.Concrates
             dict.Add("BloodType", Convert.ToByte(obj.BloodType));
             dict.Add("BirthDate", obj.BirthDate);
             dict.Add("City", Convert.ToInt32(obj.City));
-            dict.Add("IsActive", Convert.ToByte(obj.IsActive));
+            dict.Add("MemberStatus", Convert.ToByte(obj.MemberStatus));
             dict.Add("PhoneNumber", obj.PhoneNumber);
 
             int effectedRow =  DBHelper.ExecuteNonQuery(sql, dict);
