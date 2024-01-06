@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MemberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dernek.DataAccess\Dernek.DataAccess.csproj">
+      <Project>{77083A6F-15E8-4C30-BDA8-C8CBE03FC510}</Project>
+      <Name>Dernek.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dernek.Entity\Dernek.Entity.csproj">
+      <Project>{B51D25DD-DFCC-48BC-BD91-F58B3DD40849}</Project>
+      <Name>Dernek.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
