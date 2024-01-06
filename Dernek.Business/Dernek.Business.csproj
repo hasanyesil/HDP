@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MemberService.cs" />
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\IMemberService.cs" />
+    <Compile Include="Abstract\IOrganizationService.cs" />
+    <Compile Include="Abstract\IPaymentService.cs" />
+    <Compile Include="Concrates\MemberService.cs" />
+    <Compile Include="Concrates\PaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +58,9 @@
       <Project>{B51D25DD-DFCC-48BC-BD91-F58B3DD40849}</Project>
       <Name>Dernek.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concrates\OrganizationService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,10 +17,5 @@ namespace Dernek.Entity.Models
         public PricePeriods PricePeriod { get; set; }
         #endregion Public Properties
 
-        #region Relational Properties
-
-        public virtual List<Member> Members { get; set; }
-
-        #endregion Relational Properties
     }
 }

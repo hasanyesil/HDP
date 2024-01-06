@@ -14,16 +14,16 @@ using System.Windows.Forms;
 
 namespace Dernek.UI
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            NewMember form2 = new NewMember();
             form2.ShowDialog();
             form2.TopLevel = true;
             getMembers();
@@ -112,9 +112,10 @@ namespace Dernek.UI
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = filterStr;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnNewPayment_Click(object sender, EventArgs e)
         {
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = "";
+            NewPayment newPayment = new NewPayment();
+            newPayment.ShowDialog();
         }
     }
 }

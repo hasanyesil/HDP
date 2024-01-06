@@ -1,5 +1,6 @@
 ﻿using Dernek.DataAccess.Abstract;
 using Dernek.DataAccess.Helper;
+using Dernek.Entity.Enums;
 using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,38 @@ namespace Dernek.DataAccess.Concrates
         public List<Member> GetByFilter(Member member)
         {
             throw new NotImplementedException();
+        }
+
+        public Member GetById(string id)
+        {
+            string sql = @"select * from Member where Id = ?";
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("Id", id);
+
+            DataTable dt = DBHelper.ExecuteReader(sql, dict);
+
+            Member member;
+            if(dt.Rows.Count > 0)
+            {
+                member = new Member()
+                {
+                    Id = dt.Rows[0]["Id"].ToString(),
+                    BloodType = (BloodTypes)Convert.ToByte(dt.Rows[0]["BloodType"]),
+                    City = (Cities)Convert.ToInt32(dt.Rows[0]["City"]),
+                    BirthDate = (DateTime)dt.Rows[0]["BirthDate"],
+                    MemberName = dt.Rows[0]["MemberName"].ToString(),
+                    MemberStatus = (MemberStatuses)Convert.ToByte(dt.Rows[0]["MemberStatus"]),
+                    PhoneNumber = dt.Rows[0]["PhoneNumber"].ToString(),
+                    MemberSurname = dt.Rows[0]["MemberSurname"].ToString(),
+                };
+            }
+            else
+            {
+                member = new Member();
+            }
+
+            return member;
         }
 
         public Member Insert(Member obj)

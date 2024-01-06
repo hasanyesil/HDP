@@ -1,4 +1,5 @@
 ﻿using Dernek.DataAccess.Abstract;
+using Dernek.DataAccess.Helper;
 using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,16 @@ namespace Dernek.DataAccess.Concrates
 
         public Payment Insert(Payment obj)
         {
-            throw new NotImplementedException();
+            string sql = @"insert into Payment (Price, PaymentDate, MemberId) values (?,?,?)";
+
+            Dictionary<string,object> dict = new Dictionary<string,object>();
+            dict.Add("Price", obj.Price);
+            dict.Add("PaymentDate", obj.PaymentDate);
+            dict.Add("MemberId", obj.MemberId);
+
+            DBHelper.ExecuteNonQuery(sql, dict);
+
+            return obj;
         }
 
         public Payment Update(Payment obj)

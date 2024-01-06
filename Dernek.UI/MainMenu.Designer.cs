@@ -1,6 +1,6 @@
 ﻿namespace Dernek.UI
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,13 +42,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nbFee = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnNewPayment = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbFee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -71,7 +81,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.cbStatus);
             this.tabPage1.Controls.Add(this.label3);
@@ -87,12 +96,12 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1800, 927);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Üye İşlemleri";
+            this.tabPage1.Text = "Members";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1039, 14);
+            this.button2.Location = new System.Drawing.Point(1219, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 33);
             this.button2.TabIndex = 8;
@@ -169,14 +178,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(23, 56);
             this.dataGridView1.MultiSelect = false;
@@ -188,13 +197,72 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.nbFee);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.btnNewPayment);
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.tabPage2.Location = new System.Drawing.Point(4, 104);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1800, 927);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Finans";
+            this.tabPage2.Text = "Finance";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(252, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(196, 33);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(58, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Fee Period  :";
+            // 
+            // nbFee
+            // 
+            this.nbFee.Location = new System.Drawing.Point(252, 44);
+            this.nbFee.Name = "nbFee";
+            this.nbFee.Size = new System.Drawing.Size(196, 30);
+            this.nbFee.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(58, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(173, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Organization Fee :";
+            // 
+            // btnNewPayment
+            // 
+            this.btnNewPayment.Location = new System.Drawing.Point(1299, 46);
+            this.btnNewPayment.Name = "btnNewPayment";
+            this.btnNewPayment.Size = new System.Drawing.Size(410, 37);
+            this.btnNewPayment.TabIndex = 2;
+            this.btnNewPayment.Text = "New Payment";
+            this.btnNewPayment.UseVisualStyleBackColor = true;
+            this.btnNewPayment.Click += new System.EventHandler(this.btnNewPayment_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1299, 126);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(410, 37);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Debtor List";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -202,32 +270,26 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(1800, 927);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Bildirim";
+            this.tabPage3.Text = "Notification";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1147, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 32);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Clear Filter";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // Form1
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1820, 1039);
             this.Controls.Add(this.tabControl);
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbFee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,7 +311,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCity;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nbFee;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnNewPayment;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

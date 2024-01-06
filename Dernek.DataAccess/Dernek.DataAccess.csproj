@@ -47,8 +47,10 @@
   <ItemGroup>
     <Compile Include="Abstract\IBaseRepository.cs" />
     <Compile Include="Abstract\IMemberRepository.cs" />
+    <Compile Include="Abstract\IOrganizationRepository.cs" />
     <Compile Include="Abstract\IPaymentRepository.cs" />
     <Compile Include="Concrates\MemberRepository.cs" />
+    <Compile Include="Concrates\OrganizationRepository.cs" />
     <Compile Include="Concrates\PaymentRepository.cs" />
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

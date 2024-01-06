@@ -1,4 +1,5 @@
-﻿using Dernek.DataAccess.Abstract;
+﻿using Dernek.Business.Abstract;
+using Dernek.DataAccess.Abstract;
 using Dernek.DataAccess.Concrates;
 using Dernek.Entity.Models;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Dernek.Business
 {
-    public class MemberService
+    public class MemberService : IMemberService
     {
         IMemberRepository memberRepository;
 
@@ -32,6 +33,11 @@ namespace Dernek.Business
         public DataTable GetAllMembersAsDataTable()
         {
             return memberRepository.GetAllAsDt();
+        }
+
+        public Member GetMemberById(string id)
+        {
+            return memberRepository.GetById(id);
         }
     }
 }

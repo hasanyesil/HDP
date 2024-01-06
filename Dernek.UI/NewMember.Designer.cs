@@ -1,6 +1,6 @@
 ﻿namespace Dernek.UI
 {
-    partial class Form2
+    partial class NewMember
     {
         /// <summary>
         /// Required designer variable.

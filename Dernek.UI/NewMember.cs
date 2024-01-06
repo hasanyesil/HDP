@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Dernek.UI
 {
-    public partial class Form2 : Form
+    public partial class NewMember : Form
     {
-        public Form2()
+        public NewMember()
         {
             InitializeComponent();
         }
