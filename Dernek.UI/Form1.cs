@@ -83,7 +83,33 @@ namespace Dernek.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("MemberStatus = '{0}'", Convert.ToByte(cbStatus.SelectedValue));
+            string filterStr = "";
+            if((BloodTypes)cbBloodType.SelectedValue != BloodTypes.None)
+            {
+                filterStr += string.Format("BloodType = '{0}'", Convert.ToByte(cbBloodType.SelectedValue));
+            }
+
+            if((MemberStatuses)cbStatus.SelectedValue != MemberStatuses.None)
+            {
+                if (!string.IsNullOrEmpty(filterStr))
+                {
+                    filterStr += " AND ";
+                }
+
+                filterStr += string.Format(" MemberStatus = '{0}'", Convert.ToByte(cbStatus.SelectedValue));
+            }
+
+            if((Cities)cbCity.SelectedValue != Cities.None)
+            {
+                if (!string.IsNullOrEmpty(filterStr))
+                {
+                    filterStr += " AND ";
+                }
+
+                filterStr += string.Format(" City = '{0}'", Convert.ToInt32(cbCity.SelectedValue));
+            }
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = filterStr;
         }
 
         private void button3_Click(object sender, EventArgs e)
