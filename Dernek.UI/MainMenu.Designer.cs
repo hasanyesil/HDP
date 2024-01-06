@@ -42,7 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPricePeriods = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.nbFee = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,12 +52,19 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnOrganization = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbFee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -97,7 +104,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1800, 927);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Members";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button2
             // 
@@ -197,10 +203,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.nbFee);
-            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.btnNewPayment);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.ForeColor = System.Drawing.Color.SaddleBrown;
@@ -211,19 +214,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Finance";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // comboBox1
+            // cbPricePeriods
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(252, 104);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 33);
-            this.comboBox1.TabIndex = 6;
+            this.cbPricePeriods.FormattingEnabled = true;
+            this.cbPricePeriods.Location = new System.Drawing.Point(215, 190);
+            this.cbPricePeriods.Name = "cbPricePeriods";
+            this.cbPricePeriods.Size = new System.Drawing.Size(362, 33);
+            this.cbPricePeriods.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 112);
+            this.label5.Location = new System.Drawing.Point(13, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 25);
             this.label5.TabIndex = 5;
@@ -231,15 +235,15 @@
             // 
             // nbFee
             // 
-            this.nbFee.Location = new System.Drawing.Point(252, 44);
+            this.nbFee.Location = new System.Drawing.Point(215, 130);
             this.nbFee.Name = "nbFee";
-            this.nbFee.Size = new System.Drawing.Size(196, 30);
+            this.nbFee.Size = new System.Drawing.Size(362, 30);
             this.nbFee.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 46);
+            this.label4.Location = new System.Drawing.Point(13, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 25);
             this.label4.TabIndex = 3;
@@ -273,6 +277,65 @@
             this.tabPage3.Text = "Notification";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnOrganization
+            // 
+            this.btnOrganization.Location = new System.Drawing.Point(183, 531);
+            this.btnOrganization.Name = "btnOrganization";
+            this.btnOrganization.Size = new System.Drawing.Size(228, 42);
+            this.btnOrganization.TabIndex = 7;
+            this.btnOrganization.Text = "Update Organization";
+            this.btnOrganization.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnOrganization);
+            this.panel1.Controls.Add(this.nbFee);
+            this.panel1.Controls.Add(this.cbPricePeriods);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(26, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(647, 714);
+            this.panel1.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 267);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Description :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(215, 267);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(362, 155);
+            this.textBox1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(215, 47);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(362, 30);
+            this.textBox2.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(196, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Organization Name : ";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,9 +350,10 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbFee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,7 +381,13 @@
         private System.Windows.Forms.NumericUpDown nbFee;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnNewPayment;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPricePeriods;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnOrganization;
     }
 }
 

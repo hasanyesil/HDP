@@ -1,6 +1,7 @@
 ﻿using Dernek.Business.Abstract;
 using Dernek.DataAccess.Abstract;
 using Dernek.DataAccess.Concrates;
+using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace Dernek.Business.Concrates
         public decimal GetOrganizationFee()
         {
             return organizationRepository.GetOrganizationFee();
+        }
+
+        public Organization GetOrganization()
+        {
+            return organizationRepository.GetOrganization();
         }
     }
 }

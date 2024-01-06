@@ -10,5 +10,7 @@ namespace Dernek.DataAccess.Abstract
     public interface IOrganizationRepository : IBaseRepository<Organization>
     {
         decimal GetOrganizationFee();
+
+        Organization GetOrganization();
     }
 }

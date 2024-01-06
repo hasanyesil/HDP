@@ -55,6 +55,7 @@
             // tbId
             // 
             this.tbId.Location = new System.Drawing.Point(126, 35);
+            this.tbId.MaxLength = 11;
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(112, 20);
             this.tbId.TabIndex = 1;
@@ -116,6 +117,7 @@
             // 
             // btnTakePayment
             // 
+            this.btnTakePayment.Enabled = false;
             this.btnTakePayment.Location = new System.Drawing.Point(239, 328);
             this.btnTakePayment.Name = "btnTakePayment";
             this.btnTakePayment.Size = new System.Drawing.Size(288, 36);

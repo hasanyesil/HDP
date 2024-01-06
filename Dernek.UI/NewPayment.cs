@@ -1,5 +1,6 @@
 ﻿using Dernek.Business;
 using Dernek.Business.Abstract;
+using Dernek.Business.Concrates;
 using Dernek.Entity.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Dernek.UI
         IMemberService memberService;
         IPaymentService paymentService;
         IOrganizationService organizationService;
+        Member member;
 
         public NewPayment()
         {
@@ -27,6 +29,8 @@ namespace Dernek.UI
         private void NewPayment_Load(object sender, EventArgs e)
         {
             memberService = new MemberService();
+            paymentService = new PaymentService();
+            organizationService = new OrganizationService();
         }
 
         private void btnFindMember_Click(object sender, EventArgs e)
@@ -37,7 +41,7 @@ namespace Dernek.UI
             }
 
             
-            Member member = memberService.GetMemberById(tbId.Text);
+            member = memberService.GetMemberById(tbId.Text);
 
             if(member == null || string.IsNullOrEmpty(member.Id))
             {
@@ -45,10 +49,13 @@ namespace Dernek.UI
                 return;
             }
 
+            
             tbName.Text = member.MemberName;
             tbPhone.Text = member.PhoneNumber;
             tbSurname.Text = member.MemberSurname;
             btnFindMember.Enabled = false;
+            btnTakePayment.Enabled = true;
+            tbId.Enabled = false;
         }
 
         private void tbId_Validating(object sender, CancelEventArgs e)
@@ -72,6 +79,7 @@ namespace Dernek.UI
             payment.MemberId = tbId.Text;
 
             paymentService.AddPayment(payment);
+            MessageBox.Show("Payment Succeded");
         }
     }
 }
