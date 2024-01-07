@@ -12,5 +12,7 @@ namespace Dernek.Business.Abstract
         decimal GetOrganizationFeeByMonth(int month);
 
         List<OrganizationFee> GetAll();
+
+        void UpdateFee(OrganizationFee organizationFee);
     }
 }

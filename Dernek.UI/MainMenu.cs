@@ -55,18 +55,18 @@ namespace Dernek.UI
         private void getFeeInfo()
         {
             List<OrganizationFee> organizationFees = organizationService.GetAll();
-            tb1.Text = organizationFees[0].ToString();
-            tb2.Text = organizationFees[1].ToString();
-            tb3.Text = organizationFees[2].ToString();
-            tb4.Text = organizationFees[3].ToString();
-            tb5.Text = organizationFees[4].ToString();
-            tb6.Text = organizationFees[5].ToString();
-            tb7.Text = organizationFees[6].ToString();
-            tb8.Text = organizationFees[7].ToString();
-            tb9.Text = organizationFees[8].ToString();
-            tb10.Text = organizationFees[9].ToString();
-            tb11.Text = organizationFees[10].ToString();
-            tb12.Text = organizationFees[11].ToString();
+            tb1.Value = organizationFees[0].Fee;
+            tb2.Value = organizationFees[1].Fee;
+            tb3.Value = organizationFees[2].Fee;
+            tb4.Value = organizationFees[3].Fee;
+            tb5.Value = organizationFees[4].Fee;
+            tb6.Value = organizationFees[5].Fee;
+            tb7.Value = organizationFees[6].Fee;
+            tb8.Value = organizationFees[7].Fee;
+            tb9.Value = organizationFees[8].Fee;
+            tb10.Value = organizationFees[9].Fee;
+            tb11.Value = organizationFees[10].Fee;
+            tb12.Value = organizationFees[11].Fee;
         }
 
         //get all members
@@ -174,10 +174,33 @@ namespace Dernek.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            List<OrganizationFee> feeList = new List<OrganizationFee>();
+            
+            feeList.Add(new OrganizationFee { FeeMonth = 1, Fee = tb1.Value});
+            feeList.Add(new OrganizationFee { FeeMonth = 2, Fee = tb2.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 3, Fee = tb3.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 4, Fee = tb4.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 5, Fee = tb5.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 6, Fee = tb6.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 7, Fee = tb7.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 8, Fee = tb8.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 9, Fee = tb9.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 10, Fee = tb10.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 11, Fee = tb11.Value });
+            feeList.Add(new OrganizationFee { FeeMonth = 12, Fee = tb12.Value });
+
+            foreach(var fee in feeList)
+            {
+                organizationService.UpdateFee(fee);
+            }
 
         }
 
         #endregion Events
 
+        private void numericUpDown7_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

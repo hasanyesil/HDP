@@ -73,7 +73,14 @@ namespace Dernek.DataAccess.Concrates
 
         public OrganizationFee Update(OrganizationFee obj)
         {
-            throw new NotImplementedException();
+            string sql = @"update OrganizationFee set Fee = ? where FeeMonth = ?";
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("@p1", obj.Fee);
+            dict.Add("@p2", obj.FeeMonth);
+
+            DBHelper.ExecuteNonQuery(sql, dict);
+
+            return obj;
         }
     }
 }

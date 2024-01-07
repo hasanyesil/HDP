@@ -28,5 +28,10 @@ namespace Dernek.Business.Concrates
         {
             return organizationRepository.GetAll();
         }
+
+        public void UpdateFee(OrganizationFee organizationFee)
+        {
+            organizationRepository.Update(organizationFee);
+        }
     }
 }
