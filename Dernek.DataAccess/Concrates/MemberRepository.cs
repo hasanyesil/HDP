@@ -75,11 +75,20 @@ namespace Dernek.DataAccess.Concrates
 
         public DataTable GetDebtorsByDate(DateTime startDate, DateTime endDate)
         {
-            string sql = @"select m.* from Member m where m.id not in (select MemberId from Payment where PaymentDate > ? and PaymentDate < ?)";
+            string sql = @"select m.* from Member m where m.id not in (select MemberId from Payment where PaymentDate >= ? and PaymentDate < ?)";
 
             Dictionary<string, object> dict = new Dictionary<string, object>();
             dict.Add("StartDate", startDate);
             dict.Add("EndDate", endDate);
+
+            return DBHelper.ExecuteReader(sql, dict);
+        }
+
+        public DataTable GetNotInMembers(string memberList)
+        {
+            string sql = @"select * from Member where m.id not in (?)";
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("@p1", memberList);
 
             return DBHelper.ExecuteReader(sql, dict);
         }

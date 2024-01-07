@@ -17,5 +17,7 @@ namespace Dernek.DataAccess.Abstract
         DataTable GetDebtorsByDate(DateTime startDate, DateTime endDate);
 
         DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate);
+
+        DataTable GetNotInMembers(string memberList);
     }
 }

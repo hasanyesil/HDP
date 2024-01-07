@@ -42,15 +42,6 @@ namespace Dernek.Business
             return memberRepository.GetDebtorsByDate(startDate, endDate);
         }
 
-        public DataTable GetDebtorsByMonth(int month)
-        {
-            DateTime startDate = new DateTime(DateTime.Now.Year, month, 1);
-            DateTime endDate = startDate.AddMonths(1);
-            List<Payment> payments = paymentService.GetByDateList(startDate, endDate);
-
-
-        }
-
         public DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate)
         {
             return memberRepository.GetPayingUserByDate(startDate, endDate);

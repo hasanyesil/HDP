@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,6 +43,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb12 = new System.Windows.Forms.NumericUpDown();
+            this.tb11 = new System.Windows.Forms.NumericUpDown();
+            this.tb10 = new System.Windows.Forms.NumericUpDown();
+            this.tb9 = new System.Windows.Forms.NumericUpDown();
+            this.tb8 = new System.Windows.Forms.NumericUpDown();
+            this.tb7 = new System.Windows.Forms.NumericUpDown();
+            this.tb6 = new System.Windows.Forms.NumericUpDown();
+            this.tb5 = new System.Windows.Forms.NumericUpDown();
+            this.tb4 = new System.Windows.Forms.NumericUpDown();
+            this.tb3 = new System.Windows.Forms.NumericUpDown();
+            this.tb2 = new System.Windows.Forms.NumericUpDown();
+            this.tb1 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -64,36 +76,24 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tb1 = new System.Windows.Forms.NumericUpDown();
-            this.tb2 = new System.Windows.Forms.NumericUpDown();
-            this.tb3 = new System.Windows.Forms.NumericUpDown();
-            this.tb4 = new System.Windows.Forms.NumericUpDown();
-            this.tb5 = new System.Windows.Forms.NumericUpDown();
-            this.tb6 = new System.Windows.Forms.NumericUpDown();
-            this.tb7 = new System.Windows.Forms.NumericUpDown();
-            this.tb8 = new System.Windows.Forms.NumericUpDown();
-            this.tb9 = new System.Windows.Forms.NumericUpDown();
-            this.tb10 = new System.Windows.Forms.NumericUpDown();
-            this.tb11 = new System.Windows.Forms.NumericUpDown();
-            this.tb12 = new System.Windows.Forms.NumericUpDown();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -209,18 +209,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(23, 56);
@@ -282,6 +284,151 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 809);
             this.panel1.TabIndex = 11;
+            // 
+            // tb12
+            // 
+            this.tb12.Location = new System.Drawing.Point(495, 393);
+            this.tb12.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb12.Name = "tb12";
+            this.tb12.Size = new System.Drawing.Size(120, 30);
+            this.tb12.TabIndex = 47;
+            // 
+            // tb11
+            // 
+            this.tb11.Location = new System.Drawing.Point(495, 331);
+            this.tb11.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb11.Name = "tb11";
+            this.tb11.Size = new System.Drawing.Size(120, 30);
+            this.tb11.TabIndex = 46;
+            // 
+            // tb10
+            // 
+            this.tb10.Location = new System.Drawing.Point(495, 264);
+            this.tb10.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb10.Name = "tb10";
+            this.tb10.Size = new System.Drawing.Size(120, 30);
+            this.tb10.TabIndex = 45;
+            // 
+            // tb9
+            // 
+            this.tb9.Location = new System.Drawing.Point(495, 196);
+            this.tb9.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb9.Name = "tb9";
+            this.tb9.Size = new System.Drawing.Size(120, 30);
+            this.tb9.TabIndex = 44;
+            // 
+            // tb8
+            // 
+            this.tb8.Location = new System.Drawing.Point(495, 131);
+            this.tb8.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb8.Name = "tb8";
+            this.tb8.Size = new System.Drawing.Size(120, 30);
+            this.tb8.TabIndex = 43;
+            this.tb8.ValueChanged += new System.EventHandler(this.numericUpDown7_ValueChanged);
+            // 
+            // tb7
+            // 
+            this.tb7.Location = new System.Drawing.Point(495, 73);
+            this.tb7.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb7.Name = "tb7";
+            this.tb7.Size = new System.Drawing.Size(120, 30);
+            this.tb7.TabIndex = 42;
+            // 
+            // tb6
+            // 
+            this.tb6.Location = new System.Drawing.Point(148, 393);
+            this.tb6.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb6.Name = "tb6";
+            this.tb6.Size = new System.Drawing.Size(120, 30);
+            this.tb6.TabIndex = 41;
+            // 
+            // tb5
+            // 
+            this.tb5.Location = new System.Drawing.Point(148, 326);
+            this.tb5.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb5.Name = "tb5";
+            this.tb5.Size = new System.Drawing.Size(120, 30);
+            this.tb5.TabIndex = 40;
+            // 
+            // tb4
+            // 
+            this.tb4.Location = new System.Drawing.Point(148, 264);
+            this.tb4.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb4.Name = "tb4";
+            this.tb4.Size = new System.Drawing.Size(120, 30);
+            this.tb4.TabIndex = 39;
+            // 
+            // tb3
+            // 
+            this.tb3.Location = new System.Drawing.Point(148, 196);
+            this.tb3.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb3.Name = "tb3";
+            this.tb3.Size = new System.Drawing.Size(120, 30);
+            this.tb3.TabIndex = 38;
+            // 
+            // tb2
+            // 
+            this.tb2.Location = new System.Drawing.Point(148, 134);
+            this.tb2.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb2.Name = "tb2";
+            this.tb2.Size = new System.Drawing.Size(120, 30);
+            this.tb2.TabIndex = 37;
+            // 
+            // tb1
+            // 
+            this.tb1.Location = new System.Drawing.Point(148, 73);
+            this.tb1.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.tb1.Name = "tb1";
+            this.tb1.Size = new System.Drawing.Size(120, 30);
+            this.tb1.TabIndex = 36;
             // 
             // button3
             // 
@@ -450,151 +597,6 @@
             this.tabPage3.Text = "Notification";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tb1
-            // 
-            this.tb1.Location = new System.Drawing.Point(148, 73);
-            this.tb1.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb1.Name = "tb1";
-            this.tb1.Size = new System.Drawing.Size(120, 30);
-            this.tb1.TabIndex = 36;
-            // 
-            // tb2
-            // 
-            this.tb2.Location = new System.Drawing.Point(148, 134);
-            this.tb2.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb2.Name = "tb2";
-            this.tb2.Size = new System.Drawing.Size(120, 30);
-            this.tb2.TabIndex = 37;
-            // 
-            // tb3
-            // 
-            this.tb3.Location = new System.Drawing.Point(148, 196);
-            this.tb3.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb3.Name = "tb3";
-            this.tb3.Size = new System.Drawing.Size(120, 30);
-            this.tb3.TabIndex = 38;
-            // 
-            // tb4
-            // 
-            this.tb4.Location = new System.Drawing.Point(148, 264);
-            this.tb4.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb4.Name = "tb4";
-            this.tb4.Size = new System.Drawing.Size(120, 30);
-            this.tb4.TabIndex = 39;
-            // 
-            // tb5
-            // 
-            this.tb5.Location = new System.Drawing.Point(148, 326);
-            this.tb5.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb5.Name = "tb5";
-            this.tb5.Size = new System.Drawing.Size(120, 30);
-            this.tb5.TabIndex = 40;
-            // 
-            // tb6
-            // 
-            this.tb6.Location = new System.Drawing.Point(148, 393);
-            this.tb6.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb6.Name = "tb6";
-            this.tb6.Size = new System.Drawing.Size(120, 30);
-            this.tb6.TabIndex = 41;
-            // 
-            // tb7
-            // 
-            this.tb7.Location = new System.Drawing.Point(495, 73);
-            this.tb7.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb7.Name = "tb7";
-            this.tb7.Size = new System.Drawing.Size(120, 30);
-            this.tb7.TabIndex = 42;
-            // 
-            // tb8
-            // 
-            this.tb8.Location = new System.Drawing.Point(495, 131);
-            this.tb8.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb8.Name = "tb8";
-            this.tb8.Size = new System.Drawing.Size(120, 30);
-            this.tb8.TabIndex = 43;
-            this.tb8.ValueChanged += new System.EventHandler(this.numericUpDown7_ValueChanged);
-            // 
-            // tb9
-            // 
-            this.tb9.Location = new System.Drawing.Point(495, 196);
-            this.tb9.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb9.Name = "tb9";
-            this.tb9.Size = new System.Drawing.Size(120, 30);
-            this.tb9.TabIndex = 44;
-            // 
-            // tb10
-            // 
-            this.tb10.Location = new System.Drawing.Point(495, 264);
-            this.tb10.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb10.Name = "tb10";
-            this.tb10.Size = new System.Drawing.Size(120, 30);
-            this.tb10.TabIndex = 45;
-            // 
-            // tb11
-            // 
-            this.tb11.Location = new System.Drawing.Point(495, 331);
-            this.tb11.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb11.Name = "tb11";
-            this.tb11.Size = new System.Drawing.Size(120, 30);
-            this.tb11.TabIndex = 46;
-            // 
-            // tb12
-            // 
-            this.tb12.Location = new System.Drawing.Point(495, 393);
-            this.tb12.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.tb12.Name = "tb12";
-            this.tb12.Size = new System.Drawing.Size(120, 30);
-            this.tb12.TabIndex = 47;
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,19 +613,19 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
