@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Dernek.DataAccess.Abstract
 {
-    public interface IOrganizationRepository : IBaseRepository<Organization>
+    public interface IOrganizationRepository : IBaseRepository<OrganizationFee>
     {
-        decimal GetOrganizationFee();
-
-        Organization GetOrganization();
+        OrganizationFee GetByMonth();
     }
 }

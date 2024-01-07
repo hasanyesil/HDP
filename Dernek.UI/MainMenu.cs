@@ -48,10 +48,8 @@ namespace Dernek.UI
             cbBloodType.DataSource = Enum.GetValues(typeof(BloodTypes));
             cbStatus.DataSource = Enum.GetValues(typeof(MemberStatuses));
             cbCity.DataSource = Enum.GetValues(typeof(Cities));
-            cbPricePeriods.DataSource = Enum.GetValues(typeof(PricePeriods));
             
             getMembers();
-            getOrganizationInfo();
         }
 
         //get all members
@@ -60,15 +58,6 @@ namespace Dernek.UI
             DataTable dt = memberService.GetAllMembersAsDataTable();
             dataGridView1.DataSource = dt;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        private void getOrganizationInfo()
-        {
-            Organization organization = organizationService.GetOrganization();
-            nbFee.Value = organization.Price;
-            cbPricePeriods.SelectedItem = organization.PricePeriod;
-            tbDescription.Text = organization.Description;
-            tbOrganizationName.Text = organization.OrganizationName;
         }
 
         #region Events
@@ -149,23 +138,6 @@ namespace Dernek.UI
 
         }
 
-        private void btnOrganization_Click(object sender, EventArgs e)
-        {
-            Organization organization = new Organization
-            {
-                Id = 1,
-                OrganizationName = tbOrganizationName.Text,
-                Description = tbDescription.Text,
-                Price = nbFee.Value,
-                PricePeriod = (PricePeriods)cbPricePeriods.SelectedValue
-            };
-
-            organizationService.UpdateOrganization(organization);
-
-            MessageBox.Show("Updated");
-            getOrganizationInfo();
-        }
-
         private void btnPaymentList_Click(object sender, EventArgs e)
         {
             PaymentList paymentList = new PaymentList();
@@ -176,6 +148,17 @@ namespace Dernek.UI
         {
             DebtorList debtorList = new DebtorList();
             debtorList.ShowDialog();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            //User info and update screen
+            string memberId = ((DataGridView)sender).SelectedRows[0].Cells[0].Value.ToString();
+            Member member = memberService.GetMemberById(memberId);
+            
+            NewMember newMember = new NewMember(member);
+            newMember.ShowDialog();
+            getMembers();
         }
     }
 }

@@ -9,10 +9,6 @@ namespace Dernek.Business.Abstract
 {
     public interface IOrganizationService : IBaseService
     {
-        decimal GetOrganizationFee();
-
-        Organization GetOrganization();
-
-        Organization UpdateOrganization(Organization organization);
+        decimal GetOrganizationFeeByMonth();
     }
 }

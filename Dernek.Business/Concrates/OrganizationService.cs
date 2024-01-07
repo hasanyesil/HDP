@@ -19,19 +19,9 @@ namespace Dernek.Business.Concrates
             organizationRepository = new OrganizationRepository();
         }
 
-        public decimal GetOrganizationFee()
+        public decimal GetOrganizationFeeByMonth()
         {
-            return organizationRepository.GetOrganizationFee();
-        }
-
-        public Organization GetOrganization()
-        {
-            return organizationRepository.GetOrganization();
-        }
-
-        public Organization UpdateOrganization(Organization organization)
-        {
-            return organizationRepository.Update(organization);
+            return organizationRepository.GetByMonth().Fee;
         }
     }
 }

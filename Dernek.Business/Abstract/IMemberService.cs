@@ -11,6 +11,9 @@ namespace Dernek.Business.Abstract
     public interface IMemberService : IBaseService
     {
         Member AddMember(Member member);
+
+        Member UpdateMember(Member member);
+
         List<Member> GetAllMembers();
         DataTable GetAllMembersAsDataTable();
         Member GetMemberById(string id);

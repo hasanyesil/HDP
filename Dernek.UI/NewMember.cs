@@ -15,9 +15,16 @@ namespace Dernek.UI
 {
     public partial class NewMember : Form
     {
+        Member member;
         public NewMember()
         {
             InitializeComponent();
+        }
+
+        public NewMember(Member member)
+        {
+            InitializeComponent();
+            this.member = member;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -30,6 +37,23 @@ namespace Dernek.UI
             cbBloodType.DataSource = Enum.GetValues(typeof(BloodTypes));
             cbStatus.DataSource = Enum.GetValues(typeof(MemberStatuses));
             cbCity.DataSource = Enum.GetValues(typeof(Cities));
+
+            //Opened for update
+            if (member != null)
+            {
+                tbId.Text = member.Id;
+                tbName.Text = member.MemberName;
+                tbPhone.Text = member.PhoneNumber;
+                tbSurname.Text = member.MemberSurname;
+                button1.Text = "Update Member";
+
+                cbBloodType.SelectedItem = member.BloodType;
+                cbCity.SelectedItem = member.City;
+                cbStatus.SelectedItem = member.MemberStatus;
+                dateTimePicker1.Value = member.BirthDate;
+
+                tbId.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,13 +77,22 @@ namespace Dernek.UI
             };
 
             MemberService memberService = new MemberService();
-            memberService.AddMember(member);
+            
+            if(button1.Text == "Update Member")
+            {
+                memberService.UpdateMember(member);
+            }
+            else
+            {
+                memberService.AddMember(member);
+            }
+
             this.Close();
         }
 
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
-            if(string.IsNullOrEmpty(tbName.Text))
+            if (string.IsNullOrEmpty(tbName.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(tbName, "Required");
@@ -103,7 +136,7 @@ namespace Dernek.UI
                 e.Cancel = true;
                 errorProvider1.SetError(tbId, "Required");
             }
-            else if(tbId.Text.Length != 11)
+            else if (tbId.Text.Length != 11)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(tbId, "Must be 11 digit");
@@ -116,7 +149,7 @@ namespace Dernek.UI
 
         private void cbBloodType_Validating(object sender, CancelEventArgs e)
         {
-            if(cbBloodType.SelectedValue == null || (BloodTypes)cbBloodType.SelectedValue == BloodTypes.None)
+            if (cbBloodType.SelectedValue == null || (BloodTypes)cbBloodType.SelectedValue == BloodTypes.None)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(cbBloodType, "Required");
@@ -155,7 +188,7 @@ namespace Dernek.UI
 
         private void dateTimePicker1_Validating(object sender, CancelEventArgs e)
         {
-            if((DateTime.Today - dateTimePicker1.Value).TotalDays / 365.2425 < 18)
+            if ((DateTime.Today - dateTimePicker1.Value).TotalDays / 365.2425 < 18)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(dateTimePicker1, "Must be 18 or more");

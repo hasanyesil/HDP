@@ -47,7 +47,7 @@
     <Compile Include="Enums\PricePeriods.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\OrganizationFee.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -49,5 +49,10 @@ namespace Dernek.Business
         {
             return memberRepository.GetById(id);
         }
+
+        public Member UpdateMember(Member member)
+        {
+            return memberRepository.Update(member);
+        }
     }
 }

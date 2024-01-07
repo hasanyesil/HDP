@@ -117,7 +117,20 @@ namespace Dernek.DataAccess.Concrates
 
         public Member Update(Member obj)
         {
-            throw new NotImplementedException();
+            string sql = @"update Member set MemberName = ?, MemberSurname = ?, BloodType = ?, BirthDate = ?, City = ?, MemberStatus = ?, PhoneNumber = ? where id = ?";
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("MemberName", obj.MemberName);
+            dict.Add("MemberSurname", obj.MemberSurname);
+            dict.Add("BloodType", Convert.ToByte(obj.BloodType));
+            dict.Add("BirthDate", obj.BirthDate);
+            dict.Add("City", Convert.ToInt32(obj.City));
+            dict.Add("MemberStatus", Convert.ToByte(obj.MemberStatus));
+            dict.Add("PhoneNumber", obj.PhoneNumber);
+            dict.Add("Id", obj.Id);
+
+            DBHelper.ExecuteNonQuery(sql, dict);
+
+            return obj;
         }
     }
 }

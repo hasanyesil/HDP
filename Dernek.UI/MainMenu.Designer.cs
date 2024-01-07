@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,16 +42,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbOrganizationName = new System.Windows.Forms.TextBox();
-            this.tbDescription = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnOrganization = new System.Windows.Forms.Button();
-            this.nbFee = new System.Windows.Forms.NumericUpDown();
-            this.cbPricePeriods = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnNewPayment = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -63,8 +53,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbFee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,14 +173,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(23, 56);
@@ -204,11 +192,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(1285, 854);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnPaymentList);
-            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.btnNewPayment);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.ForeColor = System.Drawing.Color.SaddleBrown;
@@ -220,99 +208,6 @@
             this.tabPage2.Text = "Finance";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.tbOrganizationName);
-            this.panel1.Controls.Add(this.tbDescription);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.btnOrganization);
-            this.panel1.Controls.Add(this.nbFee);
-            this.panel1.Controls.Add(this.cbPricePeriods);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(26, 46);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(647, 714);
-            this.panel1.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 50);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 25);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Organization Name : ";
-            // 
-            // tbOrganizationName
-            // 
-            this.tbOrganizationName.Location = new System.Drawing.Point(215, 47);
-            this.tbOrganizationName.Name = "tbOrganizationName";
-            this.tbOrganizationName.Size = new System.Drawing.Size(362, 30);
-            this.tbOrganizationName.TabIndex = 10;
-            // 
-            // tbDescription
-            // 
-            this.tbDescription.Location = new System.Drawing.Point(215, 267);
-            this.tbDescription.Multiline = true;
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(362, 155);
-            this.tbDescription.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 267);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Description :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Organization Fee :";
-            // 
-            // btnOrganization
-            // 
-            this.btnOrganization.Location = new System.Drawing.Point(183, 531);
-            this.btnOrganization.Name = "btnOrganization";
-            this.btnOrganization.Size = new System.Drawing.Size(228, 42);
-            this.btnOrganization.TabIndex = 7;
-            this.btnOrganization.Text = "Update Organization";
-            this.btnOrganization.UseVisualStyleBackColor = true;
-            this.btnOrganization.Click += new System.EventHandler(this.btnOrganization_Click);
-            // 
-            // nbFee
-            // 
-            this.nbFee.Location = new System.Drawing.Point(215, 130);
-            this.nbFee.Name = "nbFee";
-            this.nbFee.Size = new System.Drawing.Size(362, 30);
-            this.nbFee.TabIndex = 4;
-            // 
-            // cbPricePeriods
-            // 
-            this.cbPricePeriods.FormattingEnabled = true;
-            this.cbPricePeriods.Location = new System.Drawing.Point(215, 190);
-            this.cbPricePeriods.Name = "cbPricePeriods";
-            this.cbPricePeriods.Size = new System.Drawing.Size(362, 33);
-            this.cbPricePeriods.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Fee Period  :";
             // 
             // btnNewPayment
             // 
@@ -367,9 +262,6 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbFee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -394,17 +286,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown nbFee;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnNewPayment;
-        private System.Windows.Forms.ComboBox cbPricePeriods;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbOrganizationName;
-        private System.Windows.Forms.TextBox tbDescription;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnOrganization;
         private System.Windows.Forms.Button btnPaymentList;
     }
 }
