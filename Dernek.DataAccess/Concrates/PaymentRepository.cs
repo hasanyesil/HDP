@@ -32,6 +32,17 @@ namespace Dernek.DataAccess.Concrates
             throw new NotImplementedException();
         }
 
+        public DataTable GetByDate(DateTime startDate, DateTime endDate)
+        {
+            string sql = @"select * from Payment where PaymentDate > ? and PaymentDate < ?";
+            
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("StartDate", startDate);
+            parameters.Add("EndDate", endDate);
+
+            return DBHelper.ExecuteReader(sql, parameters);
+        }
+
         public Payment Insert(Payment obj)
         {
             string sql = @"insert into Payment (Price, PaymentDate, MemberId) values (?,?,?)";

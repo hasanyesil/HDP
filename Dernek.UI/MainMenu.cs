@@ -165,5 +165,11 @@ namespace Dernek.UI
             MessageBox.Show("Updated");
             getOrganizationInfo();
         }
+
+        private void btnPaymentList_Click(object sender, EventArgs e)
+        {
+            PaymentList paymentList = new PaymentList();
+            paymentList.ShowDialog();
+        }
     }
 }

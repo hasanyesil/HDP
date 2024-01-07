@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentList.Designer.cs">
+      <DependentUpon>PaymentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewPayment.resx">
       <DependentUpon>NewPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentList.resx">
+      <DependentUpon>PaymentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
