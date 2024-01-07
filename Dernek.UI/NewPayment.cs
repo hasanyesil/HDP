@@ -74,7 +74,7 @@ namespace Dernek.UI
         private void btnTakePayment_Click(object sender, EventArgs e)
         {
             Payment payment = new Payment();
-            payment.Price = organizationService.GetOrganizationFee();
+            payment.Price = organizationService.GetOrganizationFeeByMonth(DateTime.Now.Month);
             payment.PaymentDate = DateTime.Today;
             payment.MemberId = tbId.Text;
 

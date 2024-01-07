@@ -20,7 +20,6 @@ namespace Dernek.UI
     {
         IMemberService memberService;
         IOrganizationService organizationService;
-        IPaymentService paymentService;
 
         public MainMenu()
         {
@@ -43,13 +42,31 @@ namespace Dernek.UI
         {
             memberService = new MemberService();
             organizationService = new OrganizationService();
-            paymentService = new PaymentService();
 
             cbBloodType.DataSource = Enum.GetValues(typeof(BloodTypes));
             cbStatus.DataSource = Enum.GetValues(typeof(MemberStatuses));
             cbCity.DataSource = Enum.GetValues(typeof(Cities));
             
             getMembers();
+            getFeeInfo();
+        }
+
+        //get fee info
+        private void getFeeInfo()
+        {
+            List<OrganizationFee> organizationFees = organizationService.GetAll();
+            tb1.Text = organizationFees[0].ToString();
+            tb2.Text = organizationFees[1].ToString();
+            tb3.Text = organizationFees[2].ToString();
+            tb4.Text = organizationFees[3].ToString();
+            tb5.Text = organizationFees[4].ToString();
+            tb6.Text = organizationFees[5].ToString();
+            tb7.Text = organizationFees[6].ToString();
+            tb8.Text = organizationFees[7].ToString();
+            tb9.Text = organizationFees[8].ToString();
+            tb10.Text = organizationFees[9].ToString();
+            tb11.Text = organizationFees[10].ToString();
+            tb12.Text = organizationFees[11].ToString();
         }
 
         //get all members
@@ -131,12 +148,6 @@ namespace Dernek.UI
             NewPayment newPayment = new NewPayment();
             newPayment.ShowDialog();
         }
-        #endregion Events
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnPaymentList_Click(object sender, EventArgs e)
         {
@@ -160,5 +171,13 @@ namespace Dernek.UI
             newMember.ShowDialog();
             getMembers();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion Events
+
     }
 }

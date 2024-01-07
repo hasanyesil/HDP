@@ -25,7 +25,25 @@ namespace Dernek.DataAccess.Concrates
 
         public List<OrganizationFee> GetAll()
         {
-            throw new NotImplementedException();
+            string sql = @"select * from OrganizationFee";
+            DataTable dt = DBHelper.ExecuteReader(sql, null);
+
+            List<OrganizationFee> list = new List<OrganizationFee>();
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    OrganizationFee fee = new OrganizationFee
+                    {
+                        FeeMonth = Convert.ToInt32(dr["FeeMonth"]),
+                        Fee = Convert.ToDecimal(dr["Fee"])
+                    };
+
+                    list.Add(fee);
+                }
+            }
+
+            return list;
         }
 
         public DataTable GetAllAsDt()
@@ -33,9 +51,19 @@ namespace Dernek.DataAccess.Concrates
             throw new NotImplementedException();
         }
 
-        public OrganizationFee GetByMonth()
+        public OrganizationFee GetByMonth(int month)
         {
-            throw new NotImplementedException();
+            string sql = @"select * from OrganizationFee where FeeMonth = ?";
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("FeeMonth", month);
+
+            DataTable dt = DBHelper.ExecuteReader(sql, dict);
+
+            OrganizationFee organizationFee = new OrganizationFee();
+            organizationFee.Fee = Convert.ToDecimal(dt.Rows[0]["Fee"]);
+            organizationFee.FeeMonth = Convert.ToInt32(dt.Rows[0]["FeeMonth"]);
+
+            return organizationFee;
         }
 
         public OrganizationFee Insert(OrganizationFee obj)

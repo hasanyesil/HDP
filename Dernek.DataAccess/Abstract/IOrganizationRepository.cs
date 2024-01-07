@@ -9,6 +9,6 @@ namespace Dernek.DataAccess.Abstract
 {
     public interface IOrganizationRepository : IBaseRepository<OrganizationFee>
     {
-        OrganizationFee GetByMonth();
+        OrganizationFee GetByMonth(int month);
     }
 }
