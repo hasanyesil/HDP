@@ -97,7 +97,7 @@ namespace Dernek.DataAccess.Concrates
 
         public Member Insert(Member obj)
         {
-            string sql = @"insert into Member (Id, MemberName, MemberSurname, BloodType, BirthDate, City, MemberStatus, PhoneNumber)
+            string sql = @"insert into Member (Id, MemberName, MemberSurname, BloodType, BirthDate, City, MemberStatus, PhoneNumber, Mail)
                             values (?,?,?,?,?,?,?,?)";
 
             Dictionary<string, object> dict = new Dictionary<string, object>();
@@ -109,6 +109,7 @@ namespace Dernek.DataAccess.Concrates
             dict.Add("City", Convert.ToInt32(obj.City));
             dict.Add("MemberStatus", Convert.ToByte(obj.MemberStatus));
             dict.Add("PhoneNumber", obj.PhoneNumber);
+            dict.Add("Mail", obj.Mail);
 
             int effectedRow =  DBHelper.ExecuteNonQuery(sql, dict);
 
@@ -117,7 +118,7 @@ namespace Dernek.DataAccess.Concrates
 
         public Member Update(Member obj)
         {
-            string sql = @"update Member set MemberName = ?, MemberSurname = ?, BloodType = ?, BirthDate = ?, City = ?, MemberStatus = ?, PhoneNumber = ? where id = ?";
+            string sql = @"update Member set MemberName = ?, MemberSurname = ?, BloodType = ?, BirthDate = ?, City = ?, MemberStatus = ?, PhoneNumber = ?, Mail = ? where id = ?";
             Dictionary<string, object> dict = new Dictionary<string, object>();
             dict.Add("MemberName", obj.MemberName);
             dict.Add("MemberSurname", obj.MemberSurname);
@@ -126,6 +127,7 @@ namespace Dernek.DataAccess.Concrates
             dict.Add("City", Convert.ToInt32(obj.City));
             dict.Add("MemberStatus", Convert.ToByte(obj.MemberStatus));
             dict.Add("PhoneNumber", obj.PhoneNumber);
+            dict.Add("Mail", obj.Mail);
             dict.Add("Id", obj.Id);
 
             DBHelper.ExecuteNonQuery(sql, dict);

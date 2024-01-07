@@ -14,10 +14,12 @@ namespace Dernek.Business
     public class MemberService : IMemberService
     {
         IMemberRepository memberRepository;
+        IPaymentService paymentService;
 
         public MemberService()
         {
             memberRepository = new MemberRepository();
+            paymentService = new PaymentService();
         }
 
         public Member AddMember(Member member)
@@ -38,6 +40,15 @@ namespace Dernek.Business
         public DataTable GetDebtorsByDate(DateTime startDate, DateTime endDate)
         {
             return memberRepository.GetDebtorsByDate(startDate, endDate);
+        }
+
+        public DataTable GetDebtorsByMonth(int month)
+        {
+            DateTime startDate = new DateTime(DateTime.Now.Year, month, 1);
+            DateTime endDate = startDate.AddMonths(1);
+            List<Payment> payments = paymentService.GetByDateList(startDate, endDate);
+
+
         }
 
         public DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate)

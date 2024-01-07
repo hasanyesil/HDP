@@ -23,6 +23,8 @@ namespace Dernek.Entity.Models
 
         public string PhoneNumber { get; set; }
 
+        public string Mail { get; set; }
+
         #endregion Public Properties
 
     }

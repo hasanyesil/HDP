@@ -45,6 +45,7 @@ namespace Dernek.UI
                 tbName.Text = member.MemberName;
                 tbPhone.Text = member.PhoneNumber;
                 tbSurname.Text = member.MemberSurname;
+                tbMail.Text = member.Mail;
                 button1.Text = "Update Member";
 
                 cbBloodType.SelectedItem = member.BloodType;
@@ -73,7 +74,8 @@ namespace Dernek.UI
                 MemberSurname = tbSurname.Text,
                 PhoneNumber = tbPhone.Text,
                 CreatedDate = DateTime.Today,
-                BirthDate = dateTimePicker1.Value.Date
+                BirthDate = dateTimePicker1.Value.Date,
+                Mail = tbMail.Text
             };
 
             MemberService memberService = new MemberService();
@@ -196,6 +198,19 @@ namespace Dernek.UI
             else
             {
                 errorProvider1.SetError(dateTimePicker1, "");
+            }
+        }
+
+        private void tbMail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbMail.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(tbMail, "Required");
+            }
+            else
+            {
+                errorProvider1.SetError(tbMail, "");
             }
         }
     }

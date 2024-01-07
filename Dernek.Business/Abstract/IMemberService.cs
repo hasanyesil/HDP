@@ -21,5 +21,7 @@ namespace Dernek.Business.Abstract
         DataTable GetDebtorsByDate(DateTime startDate,  DateTime endDate);
 
         DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate);
+
+        DataTable GetDebtorsByMonth(int month);
     }
 }

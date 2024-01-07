@@ -13,5 +13,7 @@ namespace Dernek.Business.Abstract
         Payment AddPayment(Payment payment);
 
         DataTable GetByDate(DateTime startDate, DateTime endDate);
+
+        List<Payment> GetByDateList(DateTime startDate, DateTime endDate);
     }
 }

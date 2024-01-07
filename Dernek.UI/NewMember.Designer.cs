@@ -48,6 +48,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.tbMail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,11 +212,30 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Birth Date : ";
             // 
-            // Form2
+            // tbMail
+            // 
+            this.tbMail.Location = new System.Drawing.Point(113, 211);
+            this.tbMail.Name = "tbMail";
+            this.tbMail.Size = new System.Drawing.Size(100, 20);
+            this.tbMail.TabIndex = 18;
+            this.tbMail.Validating += new System.ComponentModel.CancelEventHandler(this.tbMail_Validating);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 214);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Mail :";
+            // 
+            // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tbMail);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
@@ -233,7 +254,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "NewMember";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -263,5 +284,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbMail;
     }
 }
