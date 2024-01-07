@@ -35,6 +35,16 @@ namespace Dernek.Business
             return memberRepository.GetAllAsDt();
         }
 
+        public DataTable GetDebtorsByDate(DateTime startDate, DateTime endDate)
+        {
+            return memberRepository.GetDebtorsByDate(startDate, endDate);
+        }
+
+        public DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate)
+        {
+            return memberRepository.GetPayingUserByDate(startDate, endDate);
+        }
+
         public Member GetMemberById(string id)
         {
             return memberRepository.GetById(id);

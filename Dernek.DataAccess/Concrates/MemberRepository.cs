@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -70,6 +71,28 @@ namespace Dernek.DataAccess.Concrates
             }
 
             return member;
+        }
+
+        public DataTable GetDebtorsByDate(DateTime startDate, DateTime endDate)
+        {
+            string sql = @"select m.* from Member m where m.id not in (select MemberId from Payment where PaymentDate > ? and PaymentDate < ?)";
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("StartDate", startDate);
+            dict.Add("EndDate", endDate);
+
+            return DBHelper.ExecuteReader(sql, dict);
+        }
+
+        public DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate)
+        {
+            string sql = @"select m.* from Member m where m.id in (select MemberId from Payment where PaymentDate > ? and PaymentDate < ?)";
+
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict.Add("StartDate", startDate);
+            dict.Add("EndDate", endDate);
+
+            return DBHelper.ExecuteReader(sql, dict);
         }
 
         public Member Insert(Member obj)

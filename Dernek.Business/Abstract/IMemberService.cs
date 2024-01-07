@@ -14,5 +14,9 @@ namespace Dernek.Business.Abstract
         List<Member> GetAllMembers();
         DataTable GetAllMembersAsDataTable();
         Member GetMemberById(string id);
+
+        DataTable GetDebtorsByDate(DateTime startDate,  DateTime endDate);
+
+        DataTable GetPayingUserByDate(DateTime startDate, DateTime endDate);
     }
 }
