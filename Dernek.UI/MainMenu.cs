@@ -171,5 +171,11 @@ namespace Dernek.UI
             PaymentList paymentList = new PaymentList();
             paymentList.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DebtorList debtorList = new DebtorList();
+            debtorList.ShowDialog();
+        }
     }
 }
