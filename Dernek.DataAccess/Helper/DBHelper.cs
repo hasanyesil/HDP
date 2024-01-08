@@ -18,6 +18,8 @@ namespace Dernek.DataAccess.Helper
 
         private static OleDbConnection getConnection()
         {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
             string connectionStr = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
 
             return new OleDbConnection(connectionStr);
