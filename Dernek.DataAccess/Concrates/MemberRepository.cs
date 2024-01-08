@@ -26,7 +26,28 @@ namespace Dernek.DataAccess.Concrates
 
         public List<Member> GetAll()
         {
-            throw new NotImplementedException();
+            string sql = @"select * from Member";
+
+            DataTable dt = DBHelper.ExecuteReader(sql, null);
+
+            List<Member> list = new List<Member>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                list.Add(new Member
+                {
+                    Id = dr["Id"].ToString(),
+                    BirthDate = Convert.ToDateTime(dr["BirthDate"]),
+                    BloodType = (BloodTypes)Convert.ToByte(dr["BloodType"]),
+                    City = (Cities)Convert.ToInt32(dr["City"]),
+                    Mail = dr["Mail"].ToString(),
+                    MemberName = dr["MemberName"].ToString(),
+                    MemberStatus = (MemberStatuses)Convert.ToInt32(dr["MemberStatus"]),
+                    MemberSurname = dr["MemberSurname"].ToString(),
+                    PhoneNumber = dr["PhoneNumber"].ToString()
+                });
+            }
+
+            return list;
         }
 
         public DataTable GetAllAsDt()

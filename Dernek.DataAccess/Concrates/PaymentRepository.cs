@@ -34,7 +34,7 @@ namespace Dernek.DataAccess.Concrates
 
         public DataTable GetByDate(DateTime startDate, DateTime endDate)
         {
-            string sql = @"select * from Payment where PaymentDate > ? and PaymentDate < ?";
+            string sql = @"select * from Payment where PaymentDate >= ? and PaymentDate < ?";
             
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("StartDate", startDate);
